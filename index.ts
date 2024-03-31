@@ -17,24 +17,38 @@ if (pinInput.pin === myPinCode) {
     name: "clientChoice",
     choices: ["see balance", "withdraw Cash"],
   });
-            if(input.clientChoice==="see balance"){
-                    console.log(`your availble balance is ${myBalance}`);
-            }
-            else if(input.clientChoice==="withdraw Cash"){
-                var amount= await inquirer.prompt({
-                    message:"please enter the amount",
-                    type :"number",
-                    name:"amountWithdraw"
-                })
-                if(amount.amountWithdraw<=myBalance){
-                    myBalance=myBalance-amount.amountWithdraw;
-                    console.log(`your have withdraw this ${amount.amountWithdraw} amount and remaining balance is ${myBalance}`);
-                }else{
-                    console.log("you don't have enough amount avaliable");
-                    
-                }
-            }
-
+  if (input.clientChoice === "see balance") {
+    console.log(`your availble balance is ${myBalance}`);
+  } else if (input.clientChoice === "withdraw Cash") {
+    var amount = await inquirer.prompt({
+      message: "please enter the amount",
+      type: "list",
+      name: "amountWithdraw",
+      choices: ["2000", "5000", "10000"],
+    });
+    if (amount.amountWithdraw <= myBalance) {
+      if (amount.amountWithdraw === "2000") {
+        myBalance = myBalance - 2000;
+        console.log(
+          `your have withdraw this ${amount.amountWithdraw} amount and remaining balance is ${myBalance}`
+        );
+      }
+     else if (amount.amountWithdraw === "5000") {
+        myBalance = myBalance - 5000;
+        console.log(
+          `your have withdraw this ${amount.amountWithdraw} amount and remaining balance is ${myBalance}`
+        );
+      }
+     else if (amount.amountWithdraw === "10000") {
+        myBalance = myBalance - 10000;
+        console.log(
+          `your have withdraw this ${amount.amountWithdraw} amount and remaining balance is ${myBalance}`
+        );
+      }
+    } else {
+      console.log("you don't have enough amount avaliable");
+    }
+  }
 } else {
   console.log("your pin is wrong please try again");
 }
