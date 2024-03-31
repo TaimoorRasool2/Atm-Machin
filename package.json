@@ -1,0 +1,24 @@
+{
+  "name": "atm-machin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cmd": "^0.1.0",
+    "input": "^1.0.1",
+    "inquirer": "^9.2.17",
+    "install": "^0.13.0",
+    "to": "^0.2.9"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  }
+}
